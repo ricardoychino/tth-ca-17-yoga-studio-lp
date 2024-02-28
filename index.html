@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>Yoga Studio Landing Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <!-- Responsive menu - without JS -->
+        <nav>
+          <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button id="nav-toggle" aria-expanded="false" aria-controls="menu" aria-haspopup="true">
+          <!-- Menu icon -->
+          <!-- Copied from https://www.svgrepo.com/svg/506800/burger-menu and edited later -->
+          <svg id="open-menu" width="40px" height="40px" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 15L19 15" stroke="#506279" stroke-width="2" stroke-linecap="round"/>
+            <path d="M1 10L19 10" stroke="#506279" stroke-width="2" stroke-linecap="round"/>
+            <path d="M1 5L19 5" stroke="#506279" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg id="close-menu" width="40px" height="40px" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <path d="M5 5L15 15" stroke="#506279" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5 15L15 5" stroke="#506279" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <!-- ./Menu icon -->
+        </button>
+      </header>
+      <main>
+        <section id="home">
+          <!-- The waves background -->
+          <!-- Comment the SVG elements and uncomment the background properties of #waves in style.css for the version using the image assets -->
+          <div id="waves">
+            <!-- SVG for the waves -->
+            <svg id="waves-svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg">
+              <path id="bottom-wave" />
+              <path id="top-wave" />
+            </svg>
+            <!-- Filler of gradient block -->
+            <svg id="filler-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="mobile-gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="var(--wave-top)" />
+                  <stop offset="100%" stop-color="var(--wave-top-stop)" />
+                </linearGradient>
+                <linearGradient id="desktop-gradient" x1="0%" x2="35%" y1="0%" y2="0%">
+                  <stop offset="0%" stop-color="var(--wave-top-stop)" />
+                  <stop offset="90%" stop-color="var(--wave-top)" />
+                </linearGradient>
+              </defs>
+              <rect />
+            </svg>
+          </div>
+
+          <!-- Content -->
+          <div class="main-content">
+            <h1>Yoga Studio</h1>
+            <p>Get fit and have fun with our wide range of classes, programs, and events!</p>
+            <div class="main-content-buttons">
+              <a href="#" class="btn btn-primary">Join Now</a>
+              <a href="#" class="btn btn-secondary">View Schedule</a>
+            </div>
+          </div>
+
+          <!-- Yoga pose Image -->
+          <div class="main-image">
+            <img src="assets/img/lotus-position.svg" alt="Person in Yoga position">
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

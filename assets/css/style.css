@@ -1,0 +1,295 @@
+/* Stylesheet */
+
+/* General ------------------------ */
+  :root {
+    --wave-bottom: #F88CAC;
+    --wave-top: #EEB3A3;
+    --wave-top-stop: #FAEADF; /* Used devtools' colorpicker on image */
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    margin: 0; /* Normalize */
+    background-color: #2E3B41;
+    color: #506279;
+    padding: 60px 20px 0;
+  }
+
+  .container {
+    background-color: #FFF;
+    border-radius: 15px 15px 0 0;
+  }
+
+  header, section {
+    padding: 0 20px;
+  }
+
+  section:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .btn {
+    padding: 0.535em 1.075em;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .btn-primary {
+    background-color: #F88CAC;
+    color: #FFFFFF;
+  }
+  .btn-secondary {
+    background-color: #E9F0FD;
+  }
+  #nav-toggle {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (min-width: 1200px) {
+    body {
+      padding: 0;
+      font-size: 18px;
+    }
+    .container {
+      border-radius: 0;
+    }
+  }
+
+/* Sections ----------------------- */
+  /* Header */
+  header {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+  }
+  nav {
+    position: absolute;
+    top: 100%; /* Right after header */
+    left: 0;
+    right: 0;
+    background-color: #FFF;
+    box-shadow: 0 5px 10px -5px #CCCCCCB2;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+
+    max-height: 0;
+    transition: max-height 0.2s linear;
+  }
+  nav.open {
+    max-height: 100vh;
+  }
+  #menu {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  #menu li {
+    border-top: 1px solid #50627926;
+  }
+  #menu a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+  }
+  @media (min-width: 1200px) {
+    header {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: right;
+    }
+    nav, nav.open {
+      max-height: unset;
+    }
+    nav {
+      display: block;
+      position: relative;
+      box-shadow: unset;
+      background-color: unset;
+    }
+    #menu {
+      flex-direction: row;
+    }
+    #menu li {
+      border-top: none;
+    }
+    #nav-toggle {
+      display: none;
+    }
+  }
+
+  /* Home */
+  #home {
+    min-height: calc(100vh - 120px); /* Device viewport - top body padding - header height */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .main-content, .main-image {
+    position: relative; /* To unlock z-index */
+    z-index: 1;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    margin: auto;
+    padding: 0 15px;
+    text-align: center;
+  }
+  .main-content h1 {
+    font-size: 1.875em;
+    font-weight: 600;
+  }
+  .main-content p {
+    font-size: 0.925em;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  .main-content-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5em;
+  }
+  .main-content-buttons .btn {
+    flex-basis: 50%;
+    font-size: 0.825em;
+  }
+  .main-image {
+    margin: 20px auto;
+  }
+  .main-image img {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+
+  @media (min-width: 1200px) {
+    #home {
+      flex-direction: row-reverse;
+    }
+    .main-content {
+      flex-grow: unset;
+      margin: 0;
+      flex-basis: 40%;
+      max-width: unset;
+      padding: 0 40px;
+      font-size: 1.425em;
+      text-align: left;
+    }
+    .main-image {
+      background-image: none;
+      height: 100vh;
+      margin: 0;
+      padding: 0 60px;
+      display: flex;
+      margin-right: auto;
+    }
+    .main-image img {
+      max-width: 30vw;
+      margin: 0 auto;
+    }
+  }
+
+  #waves {
+    position: absolute;
+    left: 50%;
+    margin-left: -50vw;
+    overflow: hidden;
+    /* Default code using the initial assets */
+    /*background-image: url('../img/waves-mobile.webp');
+    background-size: 100% 50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;*/
+  }
+  #waves svg {
+    display: block;
+  }
+
+  @media (min-width: 1200px) {
+    #waves {
+      /* Default code using the initial assets */
+      /*background-image: url('../img/waves-desktop.webp');
+      background-size: 100% 100%;
+      background-position: left center;*/
+    }
+  }
+
+
+/* Challenge - paths generated at https://svgwave.in/ */
+#waves {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100vw;
+}
+#waves #waves-svg,
+#waves #filler-svg {
+  width: 100vw;
+}
+#waves #top-wave {
+  d: path("M 0,400 L 0,233 C 105.17857142857142,242.5 210.35714285714283,252 322,241 C 433.64285714285717,230 551.75,198.5 696,196 C 840.25,193.5 1010.6428571428571,220.00000000000003 1139,231 C 1267.357142857143,241.99999999999997 1353.6785714285716,237.5 1440,233 L 1440,400 L 0,400 Z");
+  fill: var(--wave-top);
+}
+#waves #bottom-wave {
+  d: path("M 0,400 L 0,100 C 110.85714285714286,78.39285714285714 221.71428571428572,56.78571428571429 333,61 C 444.2857142857143,65.21428571428571 555.9999999999999,95.25000000000001 682,110 C 808.0000000000001,124.74999999999999 948.2857142857144,124.21428571428571 1077,120 C 1205.7142857142856,115.78571428571429 1322.8571428571427,107.89285714285714 1440,100 L 1440,400 L 0,400 Z");
+  fill: var(--wave-bottom);
+}
+#waves rect {
+  x: 0;
+  y: 0;
+  height: 100%;
+  width: 100vw;
+  fill: url('#mobile-gradient');
+}
+
+@media (min-width: 1200px) {
+  #waves {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  #waves #waves-svg {
+    width: 100vh;
+    rotate: 90deg;
+    position: absolute;
+    right: calc(60vw - 60vh); /* Position of SVG right after the rect border and right after center of SVG */
+    margin-top: -1px; /* Adjust position */
+  }
+  #waves #filler-svg {
+    width: 40vw;
+    height: 100vh;
+  }
+  #waves rect {
+    fill: url('#desktop-gradient');
+  }
+
+  #waves #top-wave {
+    d: path("M 0,400 L 0,383 C 127.07142857142856,378.7321428571429 254.1428571428571,374.4642857142857 389,353 C 523.8571428571429,331.5357142857143 666.5,292.875 771,284 C 875.5,275.125 941.8571428571429,296.0357142857143 1047,280 C 1152.142857142857,263.9642857142857 1296.0714285714284,210.98214285714286 1440,158 L 1440,400 L 0,400 Z");
+  }
+  #waves #bottom-wave {
+    d: path("M 0,400 L 0,250 C 108.46428571428572,242.30357142857144 216.92857142857144,234.60714285714286 353,230 C 489.07142857142856,225.39285714285714 652.75,223.875 771,199 C 889.25,174.125 962.0714285714287,125.89285714285714 1066,93 C 1169.9285714285713,60.107142857142854 1304.9642857142858,42.55357142857143 1440,25 L 1440,380 L 0,380 Z");
+  }
+}
